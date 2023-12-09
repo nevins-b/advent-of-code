@@ -1,6 +1,6 @@
 use anyhow::Result;
 use itertools::FoldWhile::{Continue, Done};
-use itertools::{FoldWhile, Itertools};
+use itertools::Itertools;
 use nom::bytes::complete::tag;
 use nom::character::complete::alpha1;
 use nom::{IResult, InputIter};
@@ -73,8 +73,6 @@ fn part2() -> Result<u64> {
         .dedup()
         .fold(1, |acc, i| acc.lcm(&i)))
 }
-
-fn part2_the_ugly_way() -> Result<u64> {}
 
 #[cfg(test)]
 mod test {
